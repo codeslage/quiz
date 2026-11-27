@@ -1,0 +1,10 @@
+node_modules/
+coverage/
+
+# Secrets und vertrauliche Listen (Constitution VI)
+.env
+.env.*
+!.env.example
+.sperrliste
+
+.DS_Store

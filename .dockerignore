@@ -1,0 +1,5 @@
+# Nur ausdrücklich Benötigtes gelangt in den Build-Kontext: nie .env, .sperrliste, .git oder node_modules.
+*
+!package.json
+!src/
+src/**/*.test.ts

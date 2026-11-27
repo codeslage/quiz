@@ -1,0 +1,38 @@
+# Automatische Abhängigkeits-Updates per PR (Constitution XI).
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    groups:
+      typescript-eslint:
+        patterns: ['typescript-eslint', '@typescript-eslint/*']
+    # Dieselben Ausnahmen wie in werkstatt (Node 24, typescript-eslint).
+    ignore:
+      # typescript-eslint unterstützt nur typescript < 6.1.
+      - dependency-name: typescript
+        versions: ['>=6.1']
+      # Die Typen müssen zur Node-Version der Laufzeit passen (Node 24): nur Updates innerhalb von 24.x.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directories: ['/', '/.github/actions/*']
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+
+  - package-ecosystem: docker
+    directory: /
+    schedule:
+      interval: weekly
+    cooldown:
+      default-days: 3
+    ignore:
+      # Node 24, passend zu @types/node 24.x: nur neue Digests und Versionen innerhalb von 24.
+      - dependency-name: node
+        update-types: ['version-update:semver-major']
