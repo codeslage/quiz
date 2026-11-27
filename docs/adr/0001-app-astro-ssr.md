@@ -1,6 +1,6 @@
 # ADR 0001 – Eine App mit Astro im Server-Modus
 
-> Status: **Vorgeschlagen** am 2026-11-27 (Stufe 3, Freigabe mit dem Plan) · Stand: 2026-11-27
+> Status: **Angenommen** am 2026-11-27 (Freigabe des Inhabers mit dem Plan) · Stand: 2026-11-27
 > Bezug: `specs/01-quiz/spec.md` (AK-1, AK-2, AK-14, AK-22, AK-24, AK-25), `specs/01-quiz/plan.md`; in `codeslage/werkstatt`: `specs/02-architektur.md` (A1), ADR 0014; Constitution XI, XIII, XV
 
 ## Kontext

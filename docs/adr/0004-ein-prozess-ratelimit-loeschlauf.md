@@ -1,6 +1,6 @@
 # ADR 0004 – Ein Prozess: Rate-Limit im Speicher, Löschlauf in der App
 
-> Status: **Vorgeschlagen** am 2026-11-27 (Stufe 3, Freigabe mit dem Plan) · Stand: 2026-11-27
+> Status: **Angenommen** am 2026-11-27 (Freigabe des Inhabers mit dem Plan) · Stand: 2026-11-27
 > Bezug: `specs/01-quiz/spec.md` (AK-6, AK-19, AK-20), `specs/01-quiz/plan.md`; Constitution VIII, XI, XVI
 
 ## Kontext

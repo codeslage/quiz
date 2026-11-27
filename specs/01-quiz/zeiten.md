@@ -31,6 +31,9 @@ Methode:
 | Plan    | Wartezeit | 2026-11-27 20:48 | 2026-11-27 20:49 | 0:01  | Frage zur Art des Editors; Ende = erste Ablesung nach der Antwort                                                                                                   |
 | Plan    | Arbeit    | 2026-11-27 20:49 | 2026-11-27 20:51 | 0:02  | `plan.md`, ADR 0001–0004                                                                                                                                            |
 | Plan    | Arbeit    | 2026-11-27 20:51 | 2026-11-27 20:55 | 0:04  | Review-Agent, Befunde 1–11 umgesetzt, Review abgelegt, PR                                                                                                           |
+| Plan    | Arbeit    | 2026-11-27 20:55 | 2026-11-27 20:57 | 0:02  | Spec-Check rot: Review-Datei in `plan-1.md` umbenannt, CI grün                                                                                                      |
+| Plan    | Wartezeit | 2026-11-27 20:57 | 2026-11-27 20:58 | 0:01  | Freigabe des Plans; Ende = erste Ablesung nach der Antwort                                                                                                          |
+| Plan    | Arbeit    | 2026-11-27 20:58 | 2026-11-27 20:58 | 0:00  | Freigabe eingetragen, Merge                                                                                                                                         |
 
 ## Summen
 
@@ -38,4 +41,4 @@ Methode:
 | ------- | ------ | --------- | ------ |
 | Spec    | 0:23   | 0:33      | 0:56   |
 | Clarify | 0:04   | 0:04      | 0:08   |
-| Plan    | 0:07   | 0:01      | 0:08   |
+| Plan    | 0:09   | 0:02      | 0:11   |

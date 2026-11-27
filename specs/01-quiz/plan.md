@@ -1,7 +1,7 @@
 # 01 – Quiz-Plattform: Plan
 
-> Status: **Entwurf**
-> Stand: 2026-11-27 (Stufe 3; Editor mit Formularen nach Entscheidung des Inhabers)
+> Status: **Freigegeben** am 2026-11-27
+> Stand: 2026-11-27 (Freigabe durch den Inhaber; Review-Befunde umgesetzt, `reviews/plan-1.md`); 2026-11-27 (Stufe 3; Editor mit Formularen nach Entscheidung des Inhabers)
 > Bezug: `spec.md` (Status: Geklärt am 2026-11-27, freigegeben am 2026-11-26), `CONSTITUTION.md` (v1.1.0), ADR 0001–0004 in `docs/adr/`; in `codeslage/werkstatt`: `specs/02-architektur.md` (A1, A2), ADR 0009, ADR 0014
 > SDD-Stufe: 3 Plan
 

@@ -1,6 +1,6 @@
 # ADR 0002 – Admin-Login mit Better Auth und Google
 
-> Status: **Vorgeschlagen** am 2026-11-27 (Stufe 3, Freigabe mit dem Plan) · Stand: 2026-11-27
+> Status: **Angenommen** am 2026-11-27 (Freigabe des Inhabers mit dem Plan) · Stand: 2026-11-27
 > Bezug: `specs/01-quiz/spec.md` (AK-6, AK-13, Frage 1, Frage 12), `specs/01-quiz/plan.md`; in `codeslage/werkstatt`: `specs/02-architektur.md` (Logins: Google Workspace OAuth; Better Auth); Constitution VI, VII, XIII
 
 ## Kontext

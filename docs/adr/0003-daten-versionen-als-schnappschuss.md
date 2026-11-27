@@ -1,6 +1,6 @@
 # ADR 0003 – Postgres mit Quiz-Versionen als geprüftem Schnappschuss
 
-> Status: **Vorgeschlagen** am 2026-11-27 (Stufe 3, Freigabe mit dem Plan) · Stand: 2026-11-27
+> Status: **Angenommen** am 2026-11-27 (Freigabe des Inhabers mit dem Plan) · Stand: 2026-11-27
 > Bezug: `specs/01-quiz/spec.md` (AK-5, AK-10, AK-15, AK-16, AK-18, AK-21), `specs/01-quiz/plan.md`; in `codeslage/werkstatt`: `specs/02-architektur.md` (Drizzle + PostgreSQL, Zod); Constitution VII, XI, XIII
 
 ## Kontext
