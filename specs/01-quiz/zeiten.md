@@ -23,6 +23,10 @@ Methode:
 | Spec | Wartezeit | 2026-11-27 09:34 | 2026-11-27 09:36 | 0:02  | Inhaber: `gh auth refresh` und `cwk new quiz`; Ende = Anlage des Repos laut GitHub                                                                                  |
 | Spec | Arbeit    | 2026-11-27 09:36 | 2026-11-27 09:43 | 0:07  | CI und Einstellungen des neuen Repos geprüft, Spec umgezogen, README, Roadmap-Verweis in `werkstatt`, beide PRs, Review-Agent                                       |
 | Spec | Arbeit    | 2026-11-27 09:43 | 2026-11-27 09:45 | 0:02  | Review-Befunde umgesetzt, Review abgelegt                                                                                                                           |
+| Spec    | Arbeit    | 2026-11-27 09:45 | 2026-11-27 09:55 | 0:10  | Merge-Konflikt CHANGELOG, Review-Datei in `specify.md` umbenannt, CI, Merge beider PRs, Branch gelöscht; Ende ohne Ablesung, geschätzt |
+| Clarify | Arbeit    | 2026-11-27 20:33 | 2026-11-27 20:34 | 0:01  | Spec gelesen, Lücken gesucht (Rate-Limit vs. keine IP, öffentlicher Durchschnitt), Branch                                               |
+| Clarify | Wartezeit | 2026-11-27 20:34 | 2026-11-27 20:38 | 0:04  | zwei Fragerunden (Fragen 1, 5–8, 10, 11); Ende = erste Ablesung nach der Antwort                                                         |
+| Clarify | Arbeit    | 2026-11-27 20:38 | END | DUR  | Antworten eingetragen, AK angepasst, AK-27 und AK-28, Review |
 
 ## Summen
 
