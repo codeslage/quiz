@@ -34,6 +34,9 @@ Methode:
 | Plan    | Arbeit    | 2026-11-27 20:55 | 2026-11-27 20:57 | 0:02  | Spec-Check rot: Review-Datei in `plan-1.md` umbenannt, CI grün                                                                                                      |
 | Plan    | Wartezeit | 2026-11-27 20:57 | 2026-11-27 20:58 | 0:01  | Freigabe des Plans; Ende = erste Ablesung nach der Antwort                                                                                                          |
 | Plan    | Arbeit    | 2026-11-27 20:58 | 2026-11-27 20:58 | 0:00  | Freigabe eingetragen, Merge                                                                                                                                         |
+| Tasks   | Arbeit    | 2026-11-27 21:08 | 2026-11-27 21:10 | 0:02  | Vorlage, Retro der Webseite (Kalibrierung), `tasks.md` mit 29 Tasks                                                                                                 |
+| Analyze | Arbeit    | 2026-11-27 21:10 | 2026-11-27 21:11 | 0:01  | AK-Abdeckung maschinell geprüft, Analyse in `tasks.md`, Commit                                                                                                      |
+| Tasks   | Arbeit    | 2026-11-27 21:11 | 2026-11-27 21:15 | 0:04  | Review-Agent (Sitzung dazwischen neu gestartet), Befunde 1–10 umgesetzt, Review abgelegt                                                                            |
 
 ## Summen
 
@@ -42,3 +45,5 @@ Methode:
 | Spec    | 0:23   | 0:33      | 0:56   |
 | Clarify | 0:04   | 0:04      | 0:08   |
 | Plan    | 0:09   | 0:02      | 0:11   |
+| Tasks   | 0:06   | 0:00      | 0:06   |
+| Analyze | 0:01   | 0:00      | 0:01   |

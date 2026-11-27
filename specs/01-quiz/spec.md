@@ -3,7 +3,7 @@
 > Status: **Geklärt** am 2026-11-27 (Stufe 2; keine blockierende Frage offen, Fragen 9 und 12 bis Phase S offen) · Freigegeben am 2026-11-26
 > Stand: 2026-11-27 (Stufe 2: Fragen 1, 5–8, 10 und 11 beantwortet; Lücken Rate-Limit ohne IP-Speicherung und öffentlicher Durchschnitt geklärt; AK-4, AK-6, AK-9, AK-11, AK-13, AK-20 angepasst, AK-27 und AK-28 neu, A6 neu; nach Review: AK-20 mit höherer Grenze für Gruppen-Spiellinks, AK-9/AK-27 präzisiert, A1 um XP und Serien ergänzt, Frage 12 neu); 2026-11-27 (Review PR #6: Risiko „Weitergegebene Auswertungslinks“ nach Frage 2 nachgezogen, Frage 11 neu); 2026-11-27 (aus `codeslage/werkstatt`, dort Spec 09, in dieses Repo umgezogen; Inhalt unverändert); 2026-11-26 (Freigabe; Stufe 1, Entscheidungen aus der Fragerunde mit dem Inhaber; Fragen 2–4 beantwortet, AK-9 und AK-10 angepasst, AK-26 neu)
 > Bezug: `CONSTITUTION.md` (v1.1.0); in `codeslage/werkstatt`: `specs/01-vision.md` (Erfolg 6, Prinzip „Wiederverwendbar“), `specs/02-architektur.md` (A2: dev = lokal), `specs/03-roadmap.md` (Phase S, Vorhaben Quiz-Plattform), ADR 0009 (Server erst bei Bedarf)
-> SDD-Stufe: 2 Clarify · nächste: 3 Plan
+> SDD-Stufe: 2 Clarify abgeschlossen · Stand des Vorhabens: 4 Tasks / 5 Analyze (`tasks.md`)
 
 <!-- Nur WAS und WARUM. Keine Technik – die gehört in plan.md. -->
 
