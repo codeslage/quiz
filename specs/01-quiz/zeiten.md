@@ -12,19 +12,20 @@ Methode:
 - **Summen:** Unter der Tabelle stehen je Stufe bzw. Task Arbeit, Wartezeit und Gesamt.
 - **Auswertung:** Das **Ist ist die Gesamtzeit** (Arbeit + Wartezeit), weil auch das Soll die Abstimmung enthält. Die Summe je Task wird auf Viertelstunden gerundet (mindestens 0,25 h) und in `tasks.md` als Ist eingetragen. Retro und eine spätere Abrechnung weisen Arbeit und Wartezeit zusätzlich getrennt aus; dafür zählen die genauen Minuten aus dieser Tabelle.
 
-| Was  | Art       | Start            | Ende             | Dauer | Bemerkung                                                                                                                                                                                                 |
-| ---- | --------- | ---------------- | ---------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Spec | Arbeit    | 2026-11-26 21:52 | 2026-11-26 21:54 | 0:02  | Entwurf `spec.md`, Roadmap-Eintrag; die Fragerunde davor im Chat lief ohne Ablesung der Systemuhr und fehlt                                                                                               |
-| Spec | Wartezeit | 2026-11-26 21:54 | 2026-11-26 22:15 | 0:21  | Freigabe und Antworten auf die Fragen 2–4; darin die kurze Erklärung zu Frage 3 (ohne eigene Ablesung); Ende = erste Ablesung nach der Antwort                                                            |
-| Spec | Arbeit    | 2026-11-26 22:15 | 2026-11-26 22:16 | 0:01  | Antworten 2–4 eingetragen, AK-9, AK-10, AK-26                                                                                                                                                             |
-| Spec | Wartezeit | 2026-11-26 22:16 | 2026-11-26 22:26 | 0:10  | Freigabe der Spec; Ende = erste Ablesung nach der Antwort                                                                                                                                                 |
-| Spec | Arbeit    | 2026-11-26 22:26 | 2026-11-26 22:26 | 0:00  | Freigabe eingetragen, Commit                                                                                                                                                                              |
-| Repo | Arbeit    | 2026-11-27 09:33 | 2026-11-27 09:36 | 0:03  | Runbook `neues-projekt.md` gelesen, Voraussetzungen geprüft, `admin:org` fehlte; Repo mit `cwk new quiz` angelegt (Inhaber, 09:36); Ende ungenau, die Wartezeit auf `gh auth refresh` ist darin enthalten |
-| Repo | Arbeit    | 2026-11-27 09:36 | 2026-11-27 09:36 | 0:00  | Spec aus `werkstatt` umgezogen                                                                                                                                                                            |
+| Was  | Art       | Start            | Ende             | Dauer | Bemerkung                                                                                                                                                           |
+| ---- | --------- | ---------------- | ---------------- | ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Spec | Arbeit    | 2026-11-26 21:52 | 2026-11-26 21:54 | 0:02  | Entwurf `spec.md`, Roadmap-Eintrag; die Fragerunde davor im Chat lief ohne Ablesung der Systemuhr und fehlt                                                         |
+| Spec | Wartezeit | 2026-11-26 21:54 | 2026-11-26 22:15 | 0:21  | Freigabe und Antworten auf die Fragen 2–4; darin die kurze Erklärung zu Frage 3 (ohne eigene Ablesung); Ende = erste Ablesung nach der Antwort                      |
+| Spec | Arbeit    | 2026-11-26 22:15 | 2026-11-26 22:16 | 0:01  | Antworten 2–4 eingetragen, AK-9, AK-10, AK-26                                                                                                                       |
+| Spec | Wartezeit | 2026-11-26 22:16 | 2026-11-26 22:26 | 0:10  | Freigabe der Spec; Ende = erste Ablesung nach der Antwort                                                                                                           |
+| Spec | Arbeit    | 2026-11-26 22:26 | 2026-11-26 22:26 | 0:00  | Freigabe eingetragen, Commit                                                                                                                                        |
+| Spec | Arbeit    | 2026-11-27 09:33 | 2026-11-27 09:34 | 0:01  | Umzug in eigenes Repo: Runbook `neues-projekt.md` gelesen, Voraussetzungen geprüft, Recht `admin:org` fehlte; Ende ohne Ablesung, nach dem letzten Befehl geschätzt |
+| Spec | Wartezeit | 2026-11-27 09:34 | 2026-11-27 09:36 | 0:02  | Inhaber: `gh auth refresh` und `cwk new quiz`; Ende = Anlage des Repos laut GitHub                                                                                  |
+| Spec | Arbeit    | 2026-11-27 09:36 | 2026-11-27 09:43 | 0:07  | CI und Einstellungen des neuen Repos geprüft, Spec umgezogen, README, Roadmap-Verweis in `werkstatt`, beide PRs, Review-Agent                                       |
+| Spec | Arbeit    | 2026-11-27 09:43 | 2026-11-27 09:45 | 0:02  | Review-Befunde umgesetzt, Review abgelegt                                                                                                                           |
 
 ## Summen
 
 | Was  | Arbeit | Wartezeit | Gesamt |
 | ---- | ------ | --------- | ------ |
-| Spec | 0:03   | 0:31      | 0:34   |
-| Repo | 0:03   | 0:00      | 0:03   |
+| Spec | 0:13   | 0:33      | 0:46   |
