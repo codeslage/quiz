@@ -17,12 +17,12 @@ concurrency:
 jobs:
   rules:
     name: Regeln
-    uses: codeslage/werkstatt/.github/workflows/cwk-rules.yml@235b709cc81c8b825dda3f9a0964218b593c0595
+    uses: codeslage/werkstatt/.github/workflows/cwk-rules.yml@899864daf7b1305aa1fe063f4d45a46358995dac
     secrets: inherit
 
   code:
     name: Code
-    uses: codeslage/werkstatt/.github/workflows/cwk-code.yml@235b709cc81c8b825dda3f9a0964218b593c0595
+    uses: codeslage/werkstatt/.github/workflows/cwk-code.yml@899864daf7b1305aa1fe063f4d45a46358995dac
 
   ci-ok:
     name: ci-ok
