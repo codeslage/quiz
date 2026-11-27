@@ -27,9 +27,10 @@ Methode:
 | Clarify | Arbeit    | 2026-11-27 20:33 | 2026-11-27 20:34 | 0:01  | Spec gelesen, Lücken gesucht (Rate-Limit vs. keine IP, öffentlicher Durchschnitt), Branch                                                                           |
 | Clarify | Wartezeit | 2026-11-27 20:34 | 2026-11-27 20:38 | 0:04  | zwei Fragerunden (Fragen 1, 5–8, 10, 11); Ende = erste Ablesung nach der Antwort                                                                                    |
 | Clarify | Arbeit    | 2026-11-27 20:38 | 2026-11-27 20:41 | 0:03  | Antworten eingetragen, AK angepasst, AK-27 und AK-28, Review-Agent, Befunde 1–8 umgesetzt, PR                                                                       |
-| Plan    | Arbeit    | 2026-11-27 20:47 | 2026-11-27 20:48 | 0:01  | Vorlage, Architektur, CI-Projektblock und Quest-Regeln gelesen, Branch |
-| Plan    | Wartezeit | 2026-11-27 20:48 | 2026-11-27 20:49 | 0:01  | Frage zur Art des Editors; Ende = erste Ablesung nach der Antwort |
-| Plan    | Arbeit    | 2026-11-27 20:49 | 2026-11-27 20:51 | 0:02  | `plan.md`, ADR 0001–0004 |
+| Plan    | Arbeit    | 2026-11-27 20:47 | 2026-11-27 20:48 | 0:01  | Vorlage, Architektur, CI-Projektblock und Quest-Regeln gelesen, Branch                                                                                              |
+| Plan    | Wartezeit | 2026-11-27 20:48 | 2026-11-27 20:49 | 0:01  | Frage zur Art des Editors; Ende = erste Ablesung nach der Antwort                                                                                                   |
+| Plan    | Arbeit    | 2026-11-27 20:49 | 2026-11-27 20:51 | 0:02  | `plan.md`, ADR 0001–0004                                                                                                                                            |
+| Plan    | Arbeit    | 2026-11-27 20:51 | 2026-11-27 20:55 | 0:04  | Review-Agent, Befunde 1–11 umgesetzt, Review abgelegt, PR                                                                                                           |
 
 ## Summen
 
@@ -37,3 +38,4 @@ Methode:
 | ------- | ------ | --------- | ------ |
 | Spec    | 0:23   | 0:33      | 0:56   |
 | Clarify | 0:04   | 0:04      | 0:08   |
+| Plan    | 0:07   | 0:01      | 0:08   |

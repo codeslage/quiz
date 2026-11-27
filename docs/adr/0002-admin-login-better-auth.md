@@ -18,7 +18,7 @@ Nur das codeslage-Konto des Inhabers darf die Admin-Oberfläche erreichen, per G
 
 ## Entscheidung
 
-**Better Auth** mit dem Google-Anbieter, Sitzungen in Postgres. Nach jeder Anmeldung und bei jeder Admin-Anfrage wird die E-Mail des Kontos gegen `ADMIN_EMAILS` geprüft (Einstellung, eine Adresse vorerst). Andere Konten werden abgelehnt und nicht angelegt. Das Sitzungs-Cookie entsteht nur bei der Admin-Anmeldung.
+**Better Auth** mit dem Google-Anbieter, Sitzungen in Postgres. Nach jeder Anmeldung und bei jeder Admin-Anfrage wird die E-Mail des Kontos gegen `ADMIN_EMAILS` geprüft und muss bei Google bestätigt sein (`email_verified`) (Einstellung, eine Adresse vorerst). Andere Konten werden abgelehnt und nicht angelegt. Das Sitzungs-Cookie entsteht nur bei der Admin-Anmeldung.
 
 ## Folgen
 

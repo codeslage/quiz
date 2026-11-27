@@ -19,7 +19,7 @@ Die Plattform braucht Seiten zum Spielen und Auswerten, eine Admin-Oberfläche m
 
 ## Entscheidung
 
-Die Plattform ist **eine App mit Astro im Server-Modus** (`output: 'server'`, Adapter `@astrojs/node`, eigenständiger Node-Server). Interaktive Teile (Spielablauf, Quiz-Editor) sind kleine Skripte in TypeScript ohne UI-Framework. HTML aus Daten wird nie roh ausgegeben (`set:html` ist per Lint-Regel verboten).
+Die Plattform ist **eine App mit Astro im Server-Modus** (`output: 'server'`, Adapter `@astrojs/node`, eigenständiger Node-Server). Interaktive Teile (Spielablauf, Quiz-Editor) sind kleine Skripte in TypeScript ohne UI-Framework. HTML aus Daten wird nie roh ausgegeben (`set:html` in `.astro`-Dateien sowie `innerHTML`, `outerHTML` und `insertAdjacentHTML` in Browser-Skripten sind per Lint-Regel verboten).
 
 ## Folgen
 

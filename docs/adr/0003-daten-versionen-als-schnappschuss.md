@@ -18,10 +18,10 @@ Ein Quiz besteht aus verschachtelten Inhalten (Bereiche, Fragen, Antworten, Rän
 
 ## Entscheidung
 
-**PostgreSQL mit Drizzle.** Der Inhalt eines Quiz ist ein Dokument, das ein Zod-Schema beschreibt. Der Entwurf liegt als JSONB am Quiz; jede Veröffentlichung legt eine neue Zeile `quiz_versions` mit dem vollständig geprüften Inhalt an, die nie mehr geändert wird. Ein Durchgang speichert die gewählten Antwort-IDs und das daraus auf dem Server berechnete Ergebnis. Auswertungen rechnen in TypeScript über die Durchgänge einer Version.
+**PostgreSQL mit Drizzle.** Der Inhalt eines Quiz ist ein Dokument, das ein Zod-Schema beschreibt. Der Entwurf liegt als JSONB am Quiz; jede Veröffentlichung legt eine neue Zeile `quiz_versions` mit dem vollständig geprüften Inhalt an, die nie mehr geändert wird. Endgültig gelöscht werden Versionen nur zusammen mit ihrem Quiz (AK-27). Ein Durchgang speichert die gewählten Antwort-IDs und das daraus auf dem Server berechnete Ergebnis. Auswertungen rechnen in TypeScript über die Durchgänge einer Version.
 
 ## Folgen
 
 - Die IDs von Bereichen, Fragen und Antworten sind stabil innerhalb einer Version; der Editor vergibt sie.
 - Wächst eine Version auf sehr viele Durchgänge, kann die Auswertung später in SQL wandern, ohne das Modell zu ändern.
-- Abhängigkeiten: `drizzle-orm`, `drizzle-kit` (nur Entwicklung), `postgres` (Treiber), `zod`; alle MIT bzw. Unlicense, aktiv gepflegt.
+- Abhängigkeiten: `drizzle-orm`, `drizzle-kit` (nur Entwicklung), `postgres` (Treiber), `zod`; Lizenzen Apache-2.0 (Drizzle), Unlicense (`postgres`) und MIT (`zod`), alle aktiv gepflegt.
