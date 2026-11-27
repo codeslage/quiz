@@ -34,6 +34,7 @@ Methode:
 | Plan    | Arbeit    | 2026-11-27 20:55 | 2026-11-27 20:57 | 0:02  | Spec-Check rot: Review-Datei in `plan-1.md` umbenannt, CI grün                                                                                                      |
 | Plan    | Wartezeit | 2026-11-27 20:57 | 2026-11-27 20:58 | 0:01  | Freigabe des Plans; Ende = erste Ablesung nach der Antwort                                                                                                          |
 | Plan    | Arbeit    | 2026-11-27 20:58 | 2026-11-27 20:58 | 0:00  | Freigabe eingetragen, Merge                                                                                                                                         |
+| Tasks   | Arbeit    | 2026-11-27 21:08 | 2026-11-27 21:10 | 0:02  | Vorlage, Retro der Webseite (Kalibrierung), `tasks.md` mit 29 Tasks                                                                                                 |
 
 ## Summen
 
