@@ -12,6 +12,7 @@ Moderatorenansicht
 Teilnahmezertifikate
 Verschachtelung
 Versionierung
+Zugriffslogs
 claude
 codeslage
 committest

@@ -1,0 +1,52 @@
+# Review: Stufe 2 Clarify (`feature/quiz-clarify`)
+
+> Agent `code-reviewer`, 2026-11-27, Commit 1f17a26 · Ausgabe unverändert übernommen, Abschnitt „Umsetzung“ von der schreibenden Sitzung
+
+Ergebnis: ❌ nicht mergebar (offene 🔴)
+
+## Befunde
+
+| #   | Grad | Datei:Zeile                                                     | Befund                                                                                                                                                                                                                                                                  | Fehlerfall                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Artikel |
+| --- | ---- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| 1   | 🔴   | `specs/01-quiz/spec.md:82`, `:115`; `specs/01-quiz/zeiten.md:26-29` | Prettier schlägt fehl. `pnpm format` meldet beide Dateien, auf `main` sind sie sauber. In der Spec sind die Zeilen AK-13 und „XIII Wiederverwendbar“ länger als die Tabellenspalte. In `zeiten.md` haben die neuen Zeilen „Spec“ und „Clarify“ andere Spaltenbreiten als die bestehenden Zeilen. | Sobald der PR geöffnet wird, wird der Format-Check in der CI rot. Rote CI blockiert immer (`code-review.md`, Ebene 1). Behebung: `pnpm format:write`. | II, XV |
+| 2   | 🟡   | `specs/01-quiz/zeiten.md:29`, `:33-35` | Die letzte Clarify-Zeile enthält noch die Platzhalter `END` und `DUR`. In den Summen fehlt die Zeile „Clarify“. | So gemergt, gibt es für Stufe 2 weder Ende noch Dauer noch Summe. Soll/Ist in der Retro und eine spätere Abrechnung haben für diese Stufe keine Grundlage. | XIV, XII |
+| 3   | 🟡   | `specs/01-quiz/spec.md:89` (AK-20) mit K1 (Z. 47) | AK-20 legt einen Richtwert von 10 Einsendungen je Stunde und IP fest, ohne Ausnahme. Wie Workshops hinter einer Firmen-IP behandelt werden, steht nur in der Antwort zu Frage 6 (Z. 139) als Aufgabe für den Plan. Im AK selbst steht das nicht. | Ein Workshop mit 15 Teilnehmenden spielt über den Gruppenlink in einem Firmennetz mit einer gemeinsamen IP. Ab dem 11. Durchgang wird abgelehnt, und diese Durchgänge werden nach AK-5 nicht gespeichert. Die Gruppenauswertung (K1/K2) ist dann unvollständig, obwohl AK-20 wörtlich erfüllt ist. Eine Ausnahme, die der Plan festlegt, stünde im Widerspruch zum AK. Vorschlag: im AK ergänzen, dass Grenze und Fenster je Spiellink-Art im Plan festgelegt werden. Alternativ als offene Frage mit Nennung des Workshop-Falls aufnehmen. | IV, II |
+| 4   | 🟡   | `specs/01-quiz/spec.md:75` (AK-6), `:89` (AK-20) | „IP … nie gespeichert oder protokolliert“ ist absolut formuliert, gilt aber nach dem Wortlaut nur für die Plattform selbst. Offen bleibt, ob vorgeschaltete Komponenten im Betrieb ab Phase S (Reverse-Proxy- oder Hosting-Zugriffslogs) dazugehören. | Ab Phase S schreibt der Proxy Zugriffslogs mit IP. Der Test für AK-6 ist grün, das Versprechen im Hinweis vor dem Start (AK-7, S5: „nur meine Antworten, anonym“) stimmt aber nicht. Vorschlag: den Geltungsbereich klarstellen oder als Annahme bzw. offene Frage für Phase S festhalten. | VIII, IV |
+| 5   | ⚪   | `specs/01-quiz/spec.md:78` (AK-9) | Durch die Erweiterung steht „Darunter steht ‚noch zu wenige Teilnahmen‘“ jetzt drei Sätze nach der Schwelle. „Darunter“ lässt sich als Ort auf der Seite lesen („unter dem Vergleich“) statt als „unter der Schwelle“. | Ein Test oder eine Umsetzung zeigt den Hinweis immer unter dem Vergleich an, auch wenn 5 oder mehr andere Durchgänge vorliegen. Vorschlag: „Bei weniger als 5 steht stattdessen …“. | II |
+| 6   | ⚪   | `specs/01-quiz/spec.md:96` (AK-27) | „Ihre Auswertung bleibt“ lässt offen, ob der Auswertungslink des Kunden für ein archiviertes Quiz oder eine archivierte Gruppe weiter Daten zeigt oder nur die Admin-Auswertung. | Beide Umsetzungen erfüllen AK-27. Für den Kunden ist der Unterschied aber deutlich (Zugriff bleibt oder ist weg). | IV |
+| 7   | ⚪   | `specs/01-quiz/spec.md:97` (AK-28) | AK-28 hat keine passende User Story. A1 (Z. 53) nennt Bereiche, Ränge, Abzeichen und Tipps, aber weder XP noch Serien. AK-27 hat dagegen die neue Story A6 bekommen. | Für die Rückverfolgung AK → Anforderung fehlt bei AK-28 der Bezug. Vorschlag: XP und Serien in A1 ergänzen. | XV |
+| 8   | ⚪   | `specs/01-quiz/spec.md:82` (AK-13), `:110` (Check VIII) | Die Google-Anmeldung ist ein neuer Verarbeitungszweck. In `werkstatt/docs/dsgvo.md` steht Google Workspace bisher nur für Mail, Kalender und Terminbuchung. Der Constitution-Check VIII erwähnt das nicht. | Kein akuter Fehler, weil vor Phase S nichts öffentlich läuft. Ohne Merkposten fehlt der Eintrag zum Start in Phase S. Vorschlag: als Punkt für den Plan bzw. Phase S notieren. | VIII |
+
+## Checkliste
+
+| #   | Prüfpunkt | ✅/❌/– | Anmerkung |
+| --- | --------- | ------- | --------- |
+| 1   | Auftrag | ✅ | Geändert sind nur `spec.md` und `zeiten.md`. Das deckt Stufe 2 nach `sdd-clarify.md` ab: Antworten eingetragen, AKs und Constitution-Check aktualisiert, Status `Geklärt` mit Freigabevermerk (entspricht der Prüfung in `sdd-plan.md`). Die Zeile „Stand“ nennt die geänderten AKs korrekt. |
+| 2   | Korrektheit | ✅ | Keine blockierende Frage offen. Frage 9 ist begründet vertagt. Die Antworten passen zu den AKs (1→AK-13, 5→AK-9, 6→AK-6/20, 7→AK-27, 8→AK-28, 10→AK-4, 11→AK-11). Präzisierungsbedarf siehe Befunde 3–6. |
+| 3   | Tests | ✅ | Noch kein Code. Auch AK-27 und AK-28 nennen eine Testart. Lokal: `pnpm test` 2/2 grün, `lint`, `typecheck` und `spellcheck` grün. `format` ist rot (Befund 1). |
+| 4   | Eingaben | ✅ | AK-21 und AK-22 unverändert verankert. |
+| 5   | Sicherheit / Öffentlich vs. intern | ✅ | Keine Secrets, keine Kontonamen oder Adressen. Das erlaubte Admin-Konto ist eine Einstellung (AK-13). Ein anderes Google-Konto wird ausdrücklich abgelehnt. |
+| 6   | Datenschutz | ✅ | Die IP wird nur flüchtig verwendet und nicht gespeichert (AK-6/20). Der öffentliche Durchschnitt enthält keine Gruppen. Mindestzahl je Version (AK-11). Geltungsbereich und Dienstleister siehe Befunde 4 und 8. |
+| 7   | Mensch im Loop | ✅ | Veröffentlichen nur durch den Inhaber (AK-14/15). |
+| 8   | Zerstörerisches | ✅ | Endgültiges Löschen nur nach Bestätigung, die vorher zeigt, was betroffen ist. Versionen sind nicht einzeln löschbar (AK-27). Constitution-Check V entsprechend angepasst. |
+| 9   | Code-Qualität | ✅ | Kein Code. Formatierung siehe Befund 1. |
+| 10  | Abhängigkeiten | – | keine |
+| 11  | Fehler | – | Kein Code. Ablehnungen und Löschläufe müssen protokolliert werden (AK-19/20). |
+| 12  | Doku | ❌ | `zeiten.md` ist unvollständig (Befund 2). |
+
+## Zusammenfassung für den Inhaber
+
+Die Änderung trägt deine Antworten aus der Fragerunde in die Quiz-Spec ein. Dazu gehören der Admin-Login per Google, das Archivieren statt Löschen und die Regel, dass die IP-Adresse nur kurz für die Begrenzung von Einsendungen verwendet und nie gespeichert wird. Zwei neue Kriterien kommen dazu: Archivieren und Löschen sowie XP und Serien als Einstellung je Quiz. Inhaltlich ist das stimmig, und keine blockierende Frage ist mehr offen. Vor dem Merge muss die Formatierung zweier Dateien korrigiert werden, sonst wird die CI rot. Außerdem fehlt im Zeitprotokoll noch das Ende der Stufe. Bitte entscheide bewusst den Workshop-Fall: Spielen viele Teilnehmende aus einem Firmennetz, kann die Grenze von 10 Einsendungen je Stunde Ergebnisse abweisen. Das sollte im Kriterium stehen und nicht erst im Plan.
+
+## Umsetzung
+
+| #   | Entscheidung                                                                                                                                                                               |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | behoben: `prettier --write` auf beide Dateien                                                                                                                                              |
+| 2   | behoben: Ende, Dauer und Summe Clarify eingetragen                                                                                                                                         |
+| 3   | behoben: AK-20 nennt eine höhere Grenze für Gruppen-Spiellinks (Workshop hinter Firmen-IP); entspricht der gewählten Option zu Frage 6, Wert im Plan                                      |
+| 4   | behoben: AK-6 auf die Plattform eingegrenzt; Proxy- und Hosting-Logs als Frage 12 für Phase S                                                                                              |
+| 5   | behoben: „Bei weniger als 5 steht stattdessen …“                                                                                                                                           |
+| 6   | behoben: Auswertungslink zeigt bei Archivierung weiter Daten, bis gelöscht wird oder die Frist greift                                                                                     |
+| 7   | behoben: A1 um XP und Serien ergänzt                                                                                                                                                       |
+| 8   | behoben: in Frage 12 und Constitution-Check VIII als Merkposten für `docs/dsgvo.md`                                                                                                        |
