@@ -1,0 +1,141 @@
+# 01 – Quiz-Plattform: Spec
+
+> Status: **Freigegeben** am 2026-11-26 (Stufe 1; keine blockierende Frage offen, Fragen 1 und 5–10 für Stufe 2)
+> Stand: 2026-11-27 (Review PR #6: Risiko „Weitergegebene Auswertungslinks“ nach Frage 2 nachgezogen, Frage 11 neu); 2026-11-27 (aus `codeslage/werkstatt`, dort Spec 09, in dieses Repo umgezogen; Inhalt unverändert); 2026-11-26 (Freigabe; Stufe 1, Entscheidungen aus der Fragerunde mit dem Inhaber; Fragen 2–4 beantwortet, AK-9 und AK-10 angepasst, AK-26 neu)
+> Bezug: `CONSTITUTION.md` (v1.1.0); in `codeslage/werkstatt`: `specs/01-vision.md` (Erfolg 6, Prinzip „Wiederverwendbar“), `specs/02-architektur.md` (A2: dev = lokal), `specs/03-roadmap.md` (Phase S, Vorhaben Quiz-Plattform), ADR 0009 (Server erst bei Bedarf)
+> SDD-Stufe: 1 Specify · 2 Clarify
+
+<!-- Nur WAS und WARUM. Keine Technik – die gehört in plan.md. -->
+
+## Ziel
+
+codeslage bekommt eine kleine Quiz-Plattform. Ein Quiz liegt unter einem Link bereit, wird von einer Person allein durchgespielt und liefert am Ende ein Ergebnis: Rang, Werte je Bereich, Abzeichen und Tipps. Das Vorbild ist die **KI-Kompetenz-Quest**, die der Inhaber als einzelne HTML-Datei geliefert hat. Sie wird das erste Quiz.
+
+Neu gegenüber der Quest: Die Ergebnisse werden **anonym gespeichert und über viele Spielende ausgewertet**. Fragen lassen sich **ohne Code-Änderung pflegen**.
+
+Warum:
+
+- **Angebot für Kunden:** Unternehmen müssen seit Februar 2025 für ausreichende KI-Kompetenz ihrer Mitarbeitenden sorgen (EU-KI-Verordnung, Art. 4). Ein Quiz mit Gruppenauswertung zeigt einem Kunden, wo sein Team steht, z. B. vor und nach einem Workshop.
+- **Interesse messen:** Ein öffentliches Quiz auf der Webseite zeigt, ob das Thema Besucher anzieht (Vision, Erfolg 6).
+- **Wiederverwendbarer Baustein:** Mehrere Quizze mit eigenen Fragen, Bereichen und Rängen. Damit taugt die Plattform auch für andere Themen und Kundenprojekte (Artikel XIII).
+- **Bewusst kein Live-Tool:** Gespielt wird einzeln, ohne Moderation und ohne Echtzeit. Das hält den Umfang klein (Artikel XI). Ein Live-Werkzeug wie Mentimeter ist kein Ziel.
+
+## Nicht im Umfang
+
+- Live-Präsentationen, Moderatorenansicht, Abstimmung in Echtzeit
+- Konten für Spielende, Namen, E-Mail-Adressen oder andere personenbezogene Daten
+- Konten oder Logins für Kunden (Kunden bekommen einen Auswertungslink, siehe A7)
+- Kunden pflegen eigene Fragen (Mandantenfähigkeit)
+- Teilnahmezertifikate oder zertifizierte Prüfungen; das Quiz bleibt eine Selbsteinschätzung
+- Captcha und Cookies
+- Freitext-Antworten, Wortwolken, Q&A; nur Antworten mit vorgegebenen Optionen
+- Mehrsprachigkeit (Deutsch zuerst, wie die Webseite)
+- Öffentlicher Betrieb vor Phase S: Bis dahin läuft die Plattform nur lokal (ADR 0009)
+
+## User Stories / Anforderungen
+
+**Spielende**
+
+- **S1** Als spielende Person möchte ich ein Quiz über einen Link ohne Anmeldung starten, damit ich sofort loslegen kann.
+- **S2** Als spielende Person möchte ich nach jeder Antwort sehen, welche Antwort am besten gewesen wäre und warum, damit ich dabei lerne.
+- **S3** Als spielende Person möchte ich am Ende Rang, Werte je Bereich, Abzeichen und Tipps für meine schwächsten Bereiche sehen, so wie in der KI-Kompetenz-Quest.
+- **S4** Als spielende Person möchte ich sehen, wie mein Ergebnis im Vergleich zum Durchschnitt aussieht (meiner Gruppe, ohne Gruppe aller Spielenden), damit ich mich einordnen kann.
+- **S5** Als spielende Person möchte ich vor dem Start erfahren, was gespeichert wird, nämlich nur meine Antworten, anonym, damit ich ehrlich antworten kann.
+
+**Kunde**
+
+- **K1** Als Kunde möchte ich einen Link für mein Team bekommen, damit die Ergebnisse meiner Gruppe zugeordnet werden.
+- **K2** Als Kunde möchte ich über einen geheimen Auswertungslink ohne Konto die zusammengefasste Auswertung meiner Gruppe sehen, damit ich weiß, wo mein Team steht.
+- **K3** Als Kunde möchte ich sicher sein, dass sich aus der Auswertung keine einzelne Person ablesen lässt.
+
+**Inhaber (Admin)**
+
+- **A1** Als Inhaber möchte ich mehrere Quizze anlegen, jedes mit eigenen Bereichen, Fragen, Antworten mit Punkten, Erklärungen, Rängen, Abzeichen und Tipps.
+- **A2** Als Inhaber möchte ich ein Quiz als Entwurf bearbeiten und erst dann veröffentlichen, wenn es fertig ist. Jede Veröffentlichung wird eine neue Version.
+- **A3** Als Inhaber möchte ich je Quiz Gruppen anlegen (z. B. je Kunde oder Workshop) und dafür einen Spiellink und einen Auswertungslink bekommen.
+- **A4** Als Inhaber möchte ich die Auswertung aller Durchgänge sehen: je Quiz, Version und Gruppe, mit Verteilung der Antworten je Frage und Durchschnitt je Bereich.
+- **A5** Als Inhaber möchte ich, dass nur ich die Admin-Oberfläche erreiche.
+
+**Betrieb und Datenschutz**
+
+- **B1** Ergebnisse werden nach 24 Monaten automatisch gelöscht.
+- **B2** Massen-Einsendungen von einer Quelle werden begrenzt, damit die Statistik nicht leicht zu verfälschen ist.
+- **B3** Die KI-Kompetenz-Quest steht als erstes Quiz bereit, mit Inhalt und Verhalten wie in der gelieferten Datei.
+
+## Akzeptanzkriterien
+
+| ID    | Kriterium                                                                                                                                                                                                                                                                                                  | Nachweis (Testart)                 |
+| ----- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------- |
+| AK-1  | Ein veröffentlichtes Quiz lässt sich über seinen öffentlichen Link ohne Anmeldung starten und bis zur Ergebnisseite durchspielen.                                                                                                                                                                          | automatisiert (E2E)                |
+| AK-2  | Nach jeder Antwort sind die Antwortmöglichkeiten gesperrt, die beste Antwort ist markiert, eine schlechtere gewählte Antwort ebenfalls, und die Erklärung der Frage erscheint.                                                                                                                             | automatisiert (E2E)                |
+| AK-3  | Die Ergebnisseite zeigt Rang, Prozent der erreichbaren Punkte, Werte je Bereich, verdiente und offene Abzeichen und Tipps für bis zu zwei Bereiche unter der Tipp-Schwelle; berechnet nach den Regeln des Quiz.                                                                                            | automatisiert (Unit + E2E)         |
+| AK-4  | Für die KI-Kompetenz-Quest ergeben dieselben Antworten denselben Rang, dieselben Prozentwerte, XP, Serien und Abzeichen wie die gelieferte HTML-Datei (Referenzfälle: alles beste, alles schlechteste, gemischt).                                                                                          | automatisiert (Unit)               |
+| AK-5  | Ein abgeschlossener Durchgang wird mit Quiz, Version, Gruppe (falls vorhanden), gewählten Antworten und Punkten gespeichert. Ein abgebrochener Durchgang wird nicht gespeichert.                                                                                                                           | automatisiert (Integration)        |
+| AK-6  | Gespeichert werden keine Namen, E-Mail-Adressen, IP-Adressen, Geräte-Kennungen oder Freitexte. Die Seiten setzen keine Cookies und nutzen keinen lokalen Speicher, um Personen wiederzuerkennen.                                                                                                           | automatisiert (Integration + E2E)  |
+| AK-7  | Vor dem Start steht ein Hinweis, was gespeichert wird und wofür, mit Verweis auf die Datenschutzerklärung.                                                                                                                                                                                                 | automatisiert (E2E)                |
+| AK-8  | Über einen Gruppen-Spiellink gespielte Durchgänge werden dieser Gruppe zugeordnet. Ein ungültiger oder unbekannter Gruppen-Code wird abgelehnt, nicht stillschweigend ignoriert.                                                                                                                           | automatisiert (Integration + E2E)  |
+| AK-9  | Die Ergebnisseite zeigt den Vergleich mit dem Durchschnitt derselben Quiz-Version (Gruppe, sonst alle öffentlichen Durchgänge) erst, wenn mindestens 5 andere abgeschlossene Durchgänge vorliegen; der Durchschnitt erscheint in 5-Prozent-Schritten gerundet. Darunter steht „noch zu wenige Teilnahmen“. | automatisiert (Integration + E2E)  |
+| AK-10 | Der Auswertungslink einer Gruppe zeigt ohne Anmeldung je Quiz-Version Anzahl der Durchgänge, Rang-Verteilung, Durchschnitt je Bereich und Antwortverteilung je Frage, aber nie einzelne Durchgänge.                                                                                                        | automatisiert (E2E)                |
+| AK-11 | Hat eine Gruppe weniger als 5 Durchgänge, zeigt der Auswertungslink nur die Anzahl und „noch zu wenige Teilnahmen“, keine Werte.                                                                                                                                                                           | automatisiert (Integration + E2E)  |
+| AK-12 | Auswertungslinks sind nicht erratbar; ein falscher Link zeigt keine Daten und verrät nicht, ob die Gruppe existiert.                                                                                                                                                                                       | automatisiert (Integration)        |
+| AK-13 | Die Admin-Oberfläche und ihre Aktionen sind ohne Anmeldung des Inhabers nicht erreichbar; jeder andere Zugriff wird abgelehnt.                                                                                                                                                                             | automatisiert (Integration + E2E)  |
+| AK-14 | Der Inhaber kann ein Quiz mit Bereichen, Fragen, Antworten (Punkte 0–3), Erklärungen, Rängen, Abzeichen und Tipps anlegen, bearbeiten und als Entwurf speichern; Entwürfe sind öffentlich nicht spielbar.                                                                                                  | automatisiert (E2E)                |
+| AK-15 | Ein Quiz lässt sich nur veröffentlichen, wenn es vollständig und gültig ist (z. B. jede Frage mindestens zwei Antworten und mindestens eine Antwort mit Punkten ≥ 1, jeder Bereich mindestens eine Frage, Ränge ab 0 %). Ungültiges wird mit Grund abgelehnt.                                              | automatisiert (Unit + Integration) |
+| AK-16 | Jede Veröffentlichung erzeugt eine neue, unveränderliche Version. Gespeicherte Durchgänge bleiben ihrer Version zugeordnet und werden mit deren Fragen und Regeln ausgewertet.                                                                                                                             | automatisiert (Integration)        |
+| AK-17 | Der Inhaber kann je Quiz Gruppen anlegen und erhält je Gruppe einen Spiellink und einen Auswertungslink.                                                                                                                                                                                                   | automatisiert (E2E)                |
+| AK-18 | Die Admin-Auswertung zeigt je Quiz und Version, wahlweise je Gruppe oder öffentlich: Anzahl, Rang-Verteilung, Durchschnitt je Bereich und Antwortverteilung je Frage.                                                                                                                                      | automatisiert (E2E)                |
+| AK-19 | Durchgänge, die älter als 24 Monate sind, werden automatisch gelöscht; das Löschen wird protokolliert (Anzahl, ohne Inhalte).                                                                                                                                                                              | automatisiert (Integration)        |
+| AK-20 | Mehr Einsendungen von einer Quelle als die Grenze aus Frage 6 innerhalb eines Zeitfensters werden abgelehnt; die Ablehnung ist für die spielende Person sichtbar und wird protokolliert.                                                                                                                   | automatisiert (Integration)        |
+| AK-21 | Alles, was von außen kommt (Einsendungen, Links, Admin-Eingaben), wird gegen ein Schema geprüft; Ungültiges wird abgelehnt, nicht repariert.                                                                                                                                                               | automatisiert (Integration)        |
+| AK-22 | Inhalte aus dem Quiz werden so angezeigt, dass eingegebenes HTML oder Script nicht ausgeführt wird.                                                                                                                                                                                                        | automatisiert (E2E)                |
+| AK-23 | Die KI-Kompetenz-Quest ist als erstes veröffentlichtes Quiz enthalten, mit allen Bereichen, Fragen, Rängen und Abzeichen der gelieferten Datei.                                                                                                                                                            | automatisiert (Integration)        |
+| AK-24 | Spiel- und Ergebnisseiten sind mit der Tastatur bedienbar, der Fokus springt beim Fragenwechsel auf die neue Frage, Hell- und Dunkelmodus und reduzierte Bewegung werden beachtet.                                                                                                                         | automatisiert (E2E) + manuell      |
+| AK-25 | Die Plattform startet lokal mit einem Befehl samt Datenbank und dem ersten Quiz.                                                                                                                                                                                                                           | automatisiert (CI) + manuell       |
+| AK-26 | Der Inhaber kann den Auswertungslink einer Gruppe neu erzeugen; der alte Link zeigt danach keine Daten mehr. Auswertungslinks laufen nicht automatisch ab.                                                                                                                                                 | automatisiert (Integration + E2E)  |
+
+## Constitution-Check
+
+| Artikel                          | Bewertung | Anmerkung                                                                                                                   |
+| -------------------------------- | --------- | --------------------------------------------------------------------------------------------------------------------------- |
+| I Spec zuerst                    | ✅        | diese Spec vor jedem Code; Bau nach Phase 2                                                                                 |
+| II Tests beweisen die Spec       | ✅        | jedes AK mit Testart; AK-4 bindet die gelieferte Quest als Referenz                                                         |
+| III Kleine Schritte              | ✅        | Zuschnitt in PRs folgt in `tasks.md`; Spielen, Speichern, Auswerten und Admin lassen sich getrennt liefern                  |
+| IV Fragen statt raten            | ✅        | Entscheidungen aus der Fragerunde; Rest unten als offene Fragen                                                             |
+| V Keine zerstörerischen Aktionen | ✅        | automatisches Löschen nur nach Frist (AK-19); Löschen von Quizzen oder Gruppen → Frage 7                                    |
+| VI Secrets nie ins Repo          | ✅        | Auswertungslinks und Admin-Zugang sind Geheimnisse; sie entstehen zur Laufzeit, nicht im Repo                               |
+| VII Sicher als Standard          | ✅        | Admin nur für den Inhaber (AK-13), Schema-Prüfung (AK-21), keine Script-Ausführung (AK-22), Rate-Limit (AK-20)              |
+| VIII Datenschutz & EU            | ✅        | keine personenbezogenen Daten (AK-6), Mindestzahl (AK-9, AK-11), Löschfrist 24 Monate (AK-19); Betrieb ab Phase S in der EU |
+| IX Mensch im Loop                | ✅        | Quizze gehen erst nach Veröffentlichung durch den Inhaber online (AK-14, AK-15); KI-erstellte Fragen prüft der Inhaber      |
+| X Reproduzierbar                 | ✅        | lokaler Start mit einem Befehl (AK-25); Betrieb folgt dem Zielbild aus Phase S                                              |
+| XI Einfach vor vollständig       | ✅        | kein Live-Tool, keine Kundenkonten, kein Captcha, keine Freitexte (Nicht im Umfang)                                         |
+| XII Offen dokumentieren          | ✅        | Spec öffentlich; Case Study „Vom Mentimeter-Nachbau zum Quiz“ als Content-Notiz                                             |
+| XIII Wiederverwendbar            | ✅        | mehrere Quizze mit eigenen Regeln; keine codeslage-spezifischen Annahmen im Kern                                            |
+| XIV Messen statt schätzen        | ✅        | `zeiten.md` ab Stufe 1; Roadmap-Eintrag mit Soll/Ist                                                                        |
+| XV Kein unnötiger Code           | –         | gilt ab der Umsetzung                                                                                                       |
+| XVI Fehler sind sichtbar         | ✅        | Ablehnungen und Löschläufe werden protokolliert (AK-19, AK-20); Benachrichtigung bei Fehlern im Betrieb ab Phase S          |
+
+Bewertung: ✅ erfüllt · ⚠️ Abweichung (mit Begründung) · – nicht relevant
+
+## Risiken
+
+- **Verfälschte Statistik:** Ohne Captcha und Wiedererkennung kann jemand mehrfach spielen. Das Rate-Limit begrenzt das nur. Die Auswertung ist Orientierung, kein belastbares Messergebnis; der Hinweis aus der Quest bleibt.
+- **Wiedererkennbarkeit trotz Anonymität:** In kleinen Gruppen lassen sich Antworten erraten. Gegenmittel: Mindestzahl 5 und nur zusammengefasste Werte.
+- **Weitergegebene Auswertungslinks:** Wer den Link hat, sieht die Gruppenauswertung. Gegenmittel: nur zusammengefasste Werte; Widerruf durch Neu-Erzeugen (AK-26).
+- **Rechtliche Aussagen in den Fragen** (DSGVO, KI-Verordnung) können veralten. Der Inhaber prüft die Inhalte vor jeder Veröffentlichung; der Hinweis „keine Rechtsberatung“ bleibt.
+- **Nutzen erst ab Phase S:** Bis der Server steht, spielt niemand außer dem Inhaber. Wird Phase S nie ausgelöst, bleibt das Vorhaben eine lokale Demo.
+
+## Offene Fragen
+
+| #   | Frage                                                                                                                                                                                                                                                                      | Blockiert? | Antwort                                                                                                                                                                                                                         |
+| --- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1   | Wie meldet sich der Inhaber an der Admin-Oberfläche an? Vorschlag laut Architektur: Login per Google Workspace.                                                                                                                                                            | nein       |                                                                                                                                                                                                                                 |
+| 2   | Können Auswertungslinks ablaufen oder widerrufen werden (z. B. neu erzeugen, alter Link ungültig)? Vorschlag: Widerruf durch Neu-Erzeugen, kein automatischer Ablauf.                                                                                                      | ja         | 2026-11-26: wie vorgeschlagen; Widerruf durch Neu-Erzeugen, kein automatischer Ablauf (AK-26).                                                                                                                                  |
+| 3   | Ab wie vielen Durchgängen zeigt die Ergebnisseite den Vergleich mit dem Durchschnitt (AK-9)? Vorschlag: dieselbe Schwelle 5 wie die Gruppenauswertung.                                                                                                                     | ja         | 2026-11-26: mindestens 5 _andere_ Durchgänge derselben Version, eigener nicht mitgezählt; Durchschnitt in 5-Prozent-Schritten gerundet, damit sich Einzelergebnisse bei wiederholtem Spielen nicht zurückrechnen lassen (AK-9). |
+| 4   | Zählen Durchgänge älterer Versionen beim Vergleich und in der Auswertung mit? Vorschlag: nein, Vergleich nur innerhalb einer Version; die Admin-Auswertung kann Versionen wählen.                                                                                          | ja         | 2026-11-26: wie vorgeschlagen; Vergleich und Gruppenauswertung nur innerhalb einer Version, die Admin-Auswertung wählt die Version (AK-9, AK-10, AK-18).                                                                        |
+| 5   | Sehen Spielende nur ihren eigenen Durchschnittsvergleich oder auch, wie die anderen je Frage geantwortet haben? Vorschlag: nur Gesamt und je Bereich.                                                                                                                      | nein       |                                                                                                                                                                                                                                 |
+| 6   | Wie hoch ist die Grenze für Einsendungen je Quelle (AK-20)? Vorschlag: z. B. 10 je Stunde; der genaue Wert gehört in den Plan.                                                                                                                                             | nein       |                                                                                                                                                                                                                                 |
+| 7   | Darf der Inhaber Quizze, Versionen oder Gruppen samt ihren Durchgängen löschen? Vorschlag: Quiz und Gruppe archivieren statt löschen; Löschen nur mit ausdrücklicher Bestätigung.                                                                                          | nein       |                                                                                                                                                                                                                                 |
+| 8   | Bleiben XP und Serien aus der Quest erhalten, oder sind sie je Quiz abschaltbar? Vorschlag: Bestandteil der Quiz-Regeln, je Quiz einstellbar.                                                                                                                              | nein       |                                                                                                                                                                                                                                 |
+| 9   | Wo erscheint das öffentliche Quiz ab Phase S: eigene Subdomain oder eingebunden in `codeslage.de`? Betrifft die Datenschutzerklärung der Webseite.                                                                                                                         | nein       |                                                                                                                                                                                                                                 |
+| 10  | Wird die gelieferte Quest-Datei (MIT-Lizenz) unverändert als Referenz ins öffentliche Repo aufgenommen? Sie wird für AK-4 und AK-23 gebraucht.                                                                                                                             | nein       |                                                                                                                                                                                                                                 |
+| 11  | Gilt die Mindestzahl von 5 Durchgängen für die Gruppenauswertung (AK-11) je Quiz-Version, so wie die Auswertung selbst (AK-10)? Vorschlag: ja, je Gruppe und Version; sonst ließen sich bei kleinen Gruppen über die Versionen hinweg Einzelne erkennen (Review zu PR #6). | nein       |                                                                                                                                                                                                                                 |

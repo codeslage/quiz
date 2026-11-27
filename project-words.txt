@@ -2,10 +2,14 @@ Checklistenpunkt
 Codeslage
 Coolify
 Echtdaten
+Fragenwechsel
 GITHUB
 Hotfixes
 Härtungs
 Konsistenzbericht
+Mentimeter
+Moderatorenansicht
+Teilnahmezertifikate
 Verschachtelung
 Versionierung
 claude
@@ -16,6 +20,7 @@ deployen
 deployt
 drüberschauen
 dsgvo
+erratbar
 gemergt
 gemergte
 gemergten
